@@ -47,6 +47,9 @@ module.exports = [
     name: "client",
     output: {
       path: DIST_PUBLIC,
+      filename: "[name].js",
+      chunkFilename: "[name].[contenthash].chunk.js",
+      publicPath: "/",
     },
     plugins: [
       new CopyPlugin({
@@ -58,6 +61,12 @@ module.exports = [
       extensions: [".js", ".jsx"],
     },
     target: "web",
+    optimization: {
+      splitChunks: {
+        name: "vendor",
+        chunks: "initial",
+      },
+    },
   },
   {
     // devtool: "inline-source-map",
