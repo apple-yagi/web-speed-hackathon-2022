@@ -35,13 +35,7 @@ module.exports = [
             loader: "babel-loader",
             options: {
               presets: [
-                [
-                  "@babel/preset-env",
-                  {
-                    modules: "cjs",
-                    spec: true,
-                  },
-                ],
+                ["@babel/preset-env", { targets: { node: "current" } }],
                 "@babel/preset-react",
               ],
             },
