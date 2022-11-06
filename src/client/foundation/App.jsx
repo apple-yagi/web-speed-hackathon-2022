@@ -1,5 +1,3 @@
-import "./side-effects";
-
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { StyleSheetManager } from "styled-components";
