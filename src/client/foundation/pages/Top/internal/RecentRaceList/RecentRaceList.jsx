@@ -72,14 +72,14 @@ const Item = ({ race }) => {
     timingFunction: easeOutCubic,
   });
 
-  useEffect(() => {
-    resetAnimation();
-    startAnimation();
+  // useEffect(() => {
+  //   resetAnimation();
+  //   startAnimation();
 
-    return () => {
-      abortAnimation();
-    };
-  }, [race.id, startAnimation, abortAnimation, resetAnimation]);
+  //   return () => {
+  //     abortAnimation();
+  //   };
+  // }, [race.id, startAnimation, abortAnimation, resetAnimation]);
 
   return (
     <ItemWrapper $opacity={opacity}>
