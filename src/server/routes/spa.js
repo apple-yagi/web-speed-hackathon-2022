@@ -9,11 +9,6 @@ export const spaRoute = async (fastify) => {
   fastify.register(fastifyStatic, {
     root: join(__dirname, "public"),
     wildcard: false,
-    cacheControl: true,
-    etag: true,
-    lastModified: true,
-    maxAge: 31536000,
-    preCompressed: true,
   });
 
   fastify.get("/main.js", (_req, reply) => {
