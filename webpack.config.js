@@ -47,6 +47,7 @@ module.exports = [
     name: "client",
     output: {
       path: DIST_PUBLIC,
+      chunkFilename: "[name].chunk.js",
     },
     plugins: [
       new CopyPlugin({

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import React, { forwardRef, useCallback, useState } from "react";
-import zenginCode from "zengin-code";
+import React, { forwardRef, useCallback, useEffect, useState } from "react";
 
 import { Dialog } from "../../../../components/layouts/Dialog";
 import { Spacer } from "../../../../components/layouts/Spacer";
@@ -67,12 +66,24 @@ export const ChargeDialog = forwardRef(({ onComplete }, ref) => {
     [charge, bankCode, branchCode, accountNo, amount, onComplete, clearForm],
   );
 
-  const bankList = Object.entries(zenginCode).map(([code, { name }]) => ({
-    code,
-    name,
-  }));
-  const bank = zenginCode[bankCode];
-  const branch = bank?.branches[branchCode];
+  const [bankList, setBankList] = useState([]);
+  const [bank, setBank] = useState();
+  const [branch, setBranch] = useState("");
+
+  useEffect(() => {
+    import(/** webpackChunkName: "zengin-code" */ "zengin-code").then(
+      ({ default: zenginCode }) => {
+        setBankList(
+          Object.entries(zenginCode).map(([code, { name }]) => ({
+            code,
+            name,
+          })),
+        );
+        setBank(zenginCode[bankCode]);
+        setBranch(bank?.branches[branchCode]);
+      },
+    );
+  }, [bankCode, branchCode]);
 
   return (
     <Dialog ref={ref} onClose={handleCloseDialog}>

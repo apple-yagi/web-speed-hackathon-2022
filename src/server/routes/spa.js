@@ -21,6 +21,11 @@ export const spaRoute = async (fastify) => {
     return reply.sendFile("main.js.gz", join(__dirname, "public"));
   });
 
+  fastify.get("/403.chunk.js", (_req, reply) => {
+    reply.header("content-encoding", "gzip");
+    return reply.sendFile("403.chunk.js.gz", join(__dirname, "public"));
+  });
+
   fastify.get("*", (_req, reply) => {
     return reply.sendFile("index.html", join(__dirname, "public"));
   });
