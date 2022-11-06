@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require("path");
 
+const ImageminPlugin = require("imagemin-webpack-plugin").default;
 const CopyPlugin = require("copy-webpack-plugin");
 const nodeExternals = require("webpack-node-externals");
 
@@ -56,6 +57,17 @@ module.exports = [
     plugins: [
       new CopyPlugin({
         patterns: [{ from: PUBLIC_ROOT, to: DIST_PUBLIC }],
+      }),
+      new ImageminPlugin({
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        pngquant: {
+          quality: "70-85",
+        },
+        gifsicle: {
+          interlaced: false,
+          optimizationLevel: 9,
+          colors: 256,
+        },
       }),
     ],
     resolve: {
