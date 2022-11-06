@@ -7,8 +7,12 @@ import fastifyStatic from "fastify-static";
  */
 export const spaRoute = async (fastify) => {
   fastify.register(fastifyStatic, {
-    root: join(__dirname, "public"),
+    root: join(__dirname, "public/assets"),
     wildcard: false,
+  });
+
+  fastify.get("/favicon.ico", () => {
+    throw fastify.httpErrors.notFound();
   });
 
   fastify.get("/main.js", (_req, reply) => {
@@ -16,12 +20,7 @@ export const spaRoute = async (fastify) => {
     return reply.sendFile("main.js.gz", join(__dirname, "public"));
   });
 
-  fastify.get("/favicon.ico", () => {
-    throw fastify.httpErrors.notFound();
-  });
-
   fastify.get("*", (_req, reply) => {
-    reply.header("content-encoding", "gzip");
-    return reply.sendFile("index.html.gz", join(__dirname, "public"));
+    return reply.sendFile("index.html", join(__dirname, "public"));
   });
 };
