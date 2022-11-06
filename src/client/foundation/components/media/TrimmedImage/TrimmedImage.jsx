@@ -34,10 +34,11 @@ const calcImageSize = (cv, img) => {
  * @property {string} src
  * @property {number} width
  * @property {number} height
+ * @property {"lazy"|"eager"} loading
  */
 
 /** @type {React.VFC<Props>} */
-export const TrimmedImage = ({ height, src, width }) => {
+export const TrimmedImage = ({ height, src, width, loading = "lazy" }) => {
   const [dataUrl, setDataUrl] = useState(null);
 
   useEffect(() => {
@@ -65,5 +66,5 @@ export const TrimmedImage = ({ height, src, width }) => {
     };
   }, [height, src, width]);
 
-  return <img src={dataUrl} alt="" loading="lazy" />;
+  return <img src={dataUrl} alt="" loading={loading} />;
 };
