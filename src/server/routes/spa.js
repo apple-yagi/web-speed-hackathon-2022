@@ -16,11 +16,17 @@ export const spaRoute = async (fastify) => {
     preCompressed: true,
   });
 
+  fastify.get("/main.js", (_req, reply) => {
+    reply.header("content-encoding", "gzip");
+    return reply.sendFile("main.js.gz", join(__dirname, "public"));
+  });
+
   fastify.get("/favicon.ico", () => {
     throw fastify.httpErrors.notFound();
   });
 
   fastify.get("*", (_req, reply) => {
-    return reply.sendFile("index.html", join(__dirname, "public"));
+    reply.header("content-encoding", "gzip");
+    return reply.sendFile("index.html.gz", join(__dirname, "public"));
   });
 };
