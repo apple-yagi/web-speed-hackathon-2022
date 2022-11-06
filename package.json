@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "license": "MPL-2.0",
   "author": "dora <31735614+dora1998@users.noreply.github.com>",
+  "sideEffects": false,
   "scripts": {
     "build": "webpack",
     "build:watch": "yarn build --watch --progress",
@@ -64,7 +65,9 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.17.2",
-    "@fortawesome/fontawesome-free": "^6.2.0",
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-regular-svg-icons": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "axios": "^0.25.0",
     "bezier-easing": "^2.1.0",
     "fastify": "^3.25.3",
