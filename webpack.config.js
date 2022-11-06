@@ -30,19 +30,12 @@ module.exports = [
           type: "asset/source",
         },
         {
-          exclude: /[\\/]esm[\\/]/,
           test: /\.jsx?$/,
           use: {
             loader: "babel-loader",
             options: {
               presets: [
-                [
-                  "@babel/preset-env",
-                  {
-                    modules: "cjs",
-                    spec: true,
-                  },
-                ],
+                ["@babel/preset-env", { targets: { node: "current" } }],
                 "@babel/preset-react",
               ],
             },
@@ -62,6 +55,9 @@ module.exports = [
         test: /\.(jpe?g|png|gif|svg)$/i,
         pngquant: {
           quality: "70-85",
+        },
+        jpegtran: {
+          progressive: true,
         },
         gifsicle: {
           interlaced: false,
