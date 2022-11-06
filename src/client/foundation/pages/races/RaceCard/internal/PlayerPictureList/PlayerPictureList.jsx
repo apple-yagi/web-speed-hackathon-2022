@@ -28,11 +28,13 @@ const PlayerName = styled.span`
 const Item = ({ image, name, number }) => {
   return (
     <Stack gap={Space * 1}>
-      <TrimmedImage
+      <img
+        loading="lazy"
         alt={`${name}選手のプロフィール写真`}
         height={100}
         src={image}
         width={100}
+        style={{ objectFit: "cover" }}
       />
 
       <Stack horizontal alignItems="center" gap={Space / 2} wrap="wrap">
