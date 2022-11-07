@@ -216,10 +216,7 @@ export async function insertPlayers() {
 
     return new Player({
       id: uuid(),
-      image: `/assets/images/players/${`${(index % 20) + 1}`.padStart(
-        3,
-        "0",
-      )}.jpg`,
+      image: `/assets/images/players/007.avif`,
       name,
       shortName: name.substring(0, 3),
     });

@@ -32,7 +32,7 @@ const Item = ({ image, name, number }) => {
         loading="lazy"
         alt={`${name}選手のプロフィール写真`}
         height={100}
-        src={image}
+        src={image.replace("jpg", "avif")}
         width={100}
         style={{ objectFit: "cover" }}
       />

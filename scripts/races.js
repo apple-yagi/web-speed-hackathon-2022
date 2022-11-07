@@ -62,10 +62,7 @@ export async function insertRaces(startDate, endDate) {
         new Race({
           closeAt: startAt.subtract(10, "minutes").toDate(),
           id: uuid(),
-          image: `/assets/images/races/${`${((i * 24 + j) % 20) + 1}`.padStart(
-            3,
-            "0",
-          )}.jpg`,
+          image: `/assets/images/races/015.avif`,
           name: sample(NAMES),
           startAt: startAt.toDate(),
         }),

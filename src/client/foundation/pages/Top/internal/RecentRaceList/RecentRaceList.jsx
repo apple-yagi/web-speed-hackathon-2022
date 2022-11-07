@@ -96,7 +96,7 @@ const Item = ({ race }) => {
             <img
               loading="lazy"
               height={100}
-              src={race.image}
+              src={race.image.replace("jpg", "avif")}
               width={100}
               style={{ objectFit: "cover" }}
             />

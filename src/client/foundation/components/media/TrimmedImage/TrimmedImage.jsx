@@ -43,7 +43,7 @@ export const TrimmedImage = ({ height, src, width, loading = "lazy" }) => {
 
   useEffect(() => {
     const img = new Image();
-    img.src = src;
+    img.src = src.replace("jpg", "avif");
     img.onload = () => {
       const canvas = document.createElement("canvas");
       canvas.width = width;
