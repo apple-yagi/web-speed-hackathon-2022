@@ -1622,6 +1622,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@squoosh/lib@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "@squoosh/lib@npm:0.4.0"
+  dependencies:
+    wasm-feature-detect: ^1.2.11
+    web-streams-polyfill: ^3.0.3
+  checksum: 4d987d0acc8a179dd062e23efe8449d63bc344b3025978b925f324f1548a50ab4f48cadda07b605578199b45115c9c14c46c807ab955b1a233042bb632fddfef
+  languageName: node
+  linkType: hard
+
 "@stylelint/postcss-css-in-js@npm:^0.37.2":
   version: 0.37.2
   resolution: "@stylelint/postcss-css-in-js@npm:0.37.2"
@@ -9364,6 +9374,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"wasm-feature-detect@npm:^1.2.11":
+  version: 1.3.0
+  resolution: "wasm-feature-detect@npm:1.3.0"
+  checksum: fe4cd13d5a2bc5082b8ffe0ed6907bab9247ea6b130fbaa2465dd2281ad79ce6f7da6b7624f1eed47e75b48266c1522a165a117978bf3de4f60cf8dedcc9ef34
+  languageName: node
+  linkType: hard
+
 "watchpack@npm:^2.3.1":
   version: 2.3.1
   resolution: "watchpack@npm:2.3.1"
@@ -9391,6 +9408,7 @@ __metadata:
     "@babel/preset-env": ^7.16.7
     "@babel/preset-react": ^7.16.7
     "@babel/runtime": ^7.17.2
+    "@squoosh/lib": ^0.4.0
     "@stylelint/postcss-css-in-js": ^0.37.2
     "@types/lodash-es": ^4.17.6
     "@types/node": ^16.11.68
@@ -9448,6 +9466,13 @@ __metadata:
     zengin-code: ^1.0.0-p20220130
   languageName: unknown
   linkType: soft
+
+"web-streams-polyfill@npm:^3.0.3":
+  version: 3.2.1
+  resolution: "web-streams-polyfill@npm:3.2.1"
+  checksum: b119c78574b6d65935e35098c2afdcd752b84268e18746606af149e3c424e15621b6f1ff0b42b2676dc012fc4f0d313f964b41a4b5031e525faa03997457da02
+  languageName: node
+  linkType: hard
 
 "webidl-conversions@npm:^3.0.0":
   version: 3.0.1
