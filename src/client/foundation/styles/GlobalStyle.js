@@ -1,4 +1,3 @@
-import resetCss from "modern-css-reset?raw";
 import { createGlobalStyle } from "styled-components";
 
 import { Color } from "./variables";
